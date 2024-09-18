@@ -1,1 +1,29 @@
-<p>persona works!</p>
+<!-- Tabla de Datos -->
+
+<table class="table table-hover table-warning mt-5">
+    <thead>
+      <tr>
+        <th scope="col">DNI</th>
+        <th scope="col">Nombre y Apellido</th>
+        <th scope="col">Email</th>
+        <th scope="col">Fecha de Nacimiento</th>
+        <th scope="col">#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of listaPersonas">
+        <th>{{persona.perDni}}</th>
+        <td>{{persona.perNombreApellido}}</td>
+        <td>{{persona.perEmail}}</td>
+        <td>{{persona.perFechaNacimiento}}</td>
+        <td>
+          <button type="button" class="btn btn-warning text-white me-1">
+            M
+          </button>
+          <button type="button" class="btn btn-danger">
+            B
+          </button>
+          </td>
+      </tr>
+    </tbody>
+  </table>
