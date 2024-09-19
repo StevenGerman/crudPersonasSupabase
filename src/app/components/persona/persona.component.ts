@@ -43,7 +43,11 @@ export class PersonaComponent {
   }
 
 
-
+  btnEliminar(id: number): void {
+    this.servicioPersonas.eliminar(id).subscribe((error) => console.log(error))
+    setTimeout(() => this.getAllPersonas(), 1000);
+    console.log(this.listaPersonas);
+  }
 
 
 

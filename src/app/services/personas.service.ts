@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Persona } from '../data-model/persona.model';
 
@@ -12,18 +13,24 @@ const headers = new HttpHeaders({
   authorization: authorizationSupa
 })
 
+
 @Injectable({
   providedIn: 'root'
 })
-
-
-
 export class PersonasService {
+
+  
 
   constructor(private httpCli : HttpClient) { }
 
 
   getAll(){
-    return this.httpCli.get<Persona[]>(`${urlAPI}`);
+    return this.httpCli.get<Persona[]>(`${urlAPI}`,{headers});
   }
+
+
+  eliminar(id: number) {
+    return this.httpCli.delete(`${urlAPI}?id=eq.${id}`, {headers});
+  }
+
 }
